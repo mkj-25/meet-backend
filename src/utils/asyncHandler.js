@@ -1,4 +1,5 @@
-const asysncHandler = (requestHandler) => {(req, res, next) => {
+const asysncHandler = (requestHandler) => {
+    return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err)=>next(err));
 }}
 
